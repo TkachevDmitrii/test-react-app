@@ -1,0 +1,16 @@
+{
+  "version": "0.1.0",
+  "configurations": [
+    {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "runtimeArgs": [
+        "--profile-directory=develop"
+      ]
+    }
+  ]
+}

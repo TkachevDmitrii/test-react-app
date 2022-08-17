@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "target": "ES2015",
+    "downlevelIteration": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,9 +14,33 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "checkJs": true,
+    "baseUrl": "src",
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "lib": [
+      "es2020",
+      "es2019",
+      "es2018",
+      "DOM",
+      "DOM.Iterable",
+      "esnext"
+    ],
   },
   "include": [
-    "src"
-  ]
+    "./**.**",
+    "src",
+    "src/types",
+    "node_modules/@project/ui-kit/src"
+  ],
+  "exclude": [
+    "node_modules/@project/ui-kit/src/**/*.stories.*"
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "CommonJS",
+    },
+  },
 }
