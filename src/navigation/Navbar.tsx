@@ -170,6 +170,7 @@ function Navbar({ collapsed, onCollapse }: IProps) {
         {!collapsed && (<LabelMenu>1 этап</LabelMenu>)}
         <MenuItem icon={collapsed && <UserOutlined />} key='main'>Простая верстка</MenuItem>
         <MenuItem icon={collapsed && <UserAddOutlined />} key='second'>Следующий экран</MenuItem>
+        <MenuItem icon={collapsed && <UserAddOutlined />} key='third'>Третий экран</MenuItem>
       </Menu>
     </>
   )

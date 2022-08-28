@@ -6,6 +6,7 @@ import { MainLayout } from 'layouts'
 
 const Workers = lazy(() => import('./main'))
 const SecondScreen = lazy(() => import('./second'))
+const ThirdScreen = lazy(() => import('./third'))
 
 const getAuthorized = () =>
   Boolean(localStorage.getItem('accessToken')) 
@@ -36,6 +37,7 @@ function Routing() {
           <Redirect exact path='/' to='/main' />
           <Route path='/main' component={Workers} />
           <Route path='/second' component={SecondScreen} />
+          <Route path='/third' component={ThirdScreen} />
         </Switch>
       </Suspense>
     </MainLayout>
