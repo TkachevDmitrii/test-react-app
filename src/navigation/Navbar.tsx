@@ -33,11 +33,11 @@ type ClickHandler = NonNullable<MenuProps['onClick']>
 //   overflow-y: auto;
 //   overflow-x: hidden;
 // `
-// const LabelMenu = styled.div`
-//   font-size: 10px;
-//   color: ${palette.GRAY_DARK};
-//   margin: 16px 16px 10px;
-// `
+const LabelMenu = styled.div`
+  font-size: 10px;
+  color: ${palette.GRAY_DARK};
+  margin: 16px 16px 10px;
+`
 // const StyledMenuItem = styled(MenuItem)`
 //   font-size: 14px;
 //   color: ${palette.DARK};
@@ -167,9 +167,9 @@ function Navbar({ collapsed, onCollapse }: IProps) {
         selectedKeys={selectedKeys}
         onClick={handleClick}
       >
-        {/* {!collapsed && (<LabelMenu>1 этап</LabelMenu>)} */}
+        {!collapsed && (<LabelMenu>1 этап</LabelMenu>)}
         <MenuItem icon={collapsed && <UserOutlined />} key='workers'>Простая верстка</MenuItem>
-        <MenuItem icon={collapsed && <UserAddOutlined />} key='verification'>------</MenuItem>
+        <MenuItem icon={collapsed && <UserAddOutlined />} key='second'>Следующий экран</MenuItem>
       </Menu>
     </>
   )

@@ -1,4 +1,5 @@
-import { palette } from '@my/ui-kit'
+import { Button, Checkbox, palette } from '@my/ui-kit'
+import { _history } from 'App'
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,19 +15,35 @@ const Text = styled.p`
   font-weight: 600;
   font-size: 24px;
 `
+const CheckboxText = styled(Text)`
+  color: ${palette.DARK};
+  font-size: 16px;
+`
+const CheckboxContainer = styled.div`
+  display: flex;
+`
 
 export const Main = () => {
 
   return (
     <Wrapper>
       <Container>
-        <Text>qwe</Text>
+        <Text >qwe</Text>
         <Text>zxc</Text>
+        <Button type='transparent' onClick={() => console.log('clicked')}>
+          Кнопка ведет на Следующий экран
+        </Button>
       </Container>
       
       <Container>
         <Text>asd</Text>
         <Text>eeee</Text>
+        <CheckboxContainer>
+          <Checkbox 
+            onChange={({ target }) => console.log('value', target.checked)}
+          />
+          <CheckboxText>Активировать кнопку</CheckboxText>
+        </CheckboxContainer>
       </Container>
     </Wrapper>
   )
