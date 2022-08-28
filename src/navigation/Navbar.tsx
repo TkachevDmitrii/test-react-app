@@ -168,7 +168,7 @@ function Navbar({ collapsed, onCollapse }: IProps) {
         onClick={handleClick}
       >
         {!collapsed && (<LabelMenu>1 этап</LabelMenu>)}
-        <MenuItem icon={collapsed && <UserOutlined />} key='workers'>Простая верстка</MenuItem>
+        <MenuItem icon={collapsed && <UserOutlined />} key='main'>Простая верстка</MenuItem>
         <MenuItem icon={collapsed && <UserAddOutlined />} key='second'>Следующий экран</MenuItem>
       </Menu>
     </>

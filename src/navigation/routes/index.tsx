@@ -5,6 +5,7 @@ import SignIn from 'pages/SignIn'
 import { MainLayout } from 'layouts'
 
 const Workers = lazy(() => import('./main'))
+const SecondScreen = lazy(() => import('./second'))
 
 const getAuthorized = () =>
   Boolean(localStorage.getItem('accessToken')) 
@@ -32,9 +33,9 @@ function Routing() {
     <MainLayout>
       <Suspense fallback={<></>}>
         <Switch>
-          <Redirect exact path='/' to='/workers' />
-
-          <Route path='/workers' component={Workers} />
+          <Redirect exact path='/' to='/main' />
+          <Route path='/main' component={Workers} />
+          <Route path='/second' component={SecondScreen} />
         </Switch>
       </Suspense>
     </MainLayout>

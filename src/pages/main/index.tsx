@@ -1,4 +1,6 @@
 import { Button, Checkbox, palette } from '@my/ui-kit'
+import './main.css'
+import { useHistory } from 'react-router-dom'
 import { _history } from 'App'
 
 const Wrapper = styled.div`
@@ -9,6 +11,7 @@ const Container = styled.div`
   width: 50%;
   height: 500px;
   border: 5px solid ${palette.GRAY}; 
+  padding: 16px;
 `
 const Text = styled.p`
   color: ${palette.RED};
@@ -18,19 +21,23 @@ const Text = styled.p`
 const CheckboxText = styled(Text)`
   color: ${palette.DARK};
   font-size: 16px;
+  margin-left: 8px;
 `
 const CheckboxContainer = styled.div`
   display: flex;
+  align-items: baseline;
 `
 
 export const Main = () => {
 
+  const history = useHistory()
+
   return (
     <Wrapper>
       <Container>
-        <Text >qwe</Text>
+        <Text>qwe</Text>
         <Text>zxc</Text>
-        <Button type='transparent' onClick={() => console.log('clicked')}>
+        <Button type='transparent' onClick={() => history.push('second')}>
           Кнопка ведет на Следующий экран
         </Button>
       </Container>
