@@ -17,6 +17,7 @@ export function Step<Component extends React.ElementType>(props: StepProps<Compo
 
   const Component = component ?? React.Fragment
   return (
+    //@ts-ignore
     <Component {...componentProps} />
   )
 }

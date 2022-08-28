@@ -30,6 +30,7 @@ export function FieldErrorMsg<
   const Component = component ?? 'div'
 
   return (
+    //@ts-ignore
     <Component {...props} style={{ color: palette.RED, fontSize: '12px', fontWeight: 500, marginBottom: '12px' }}>
       {error || submitError}
     </Component>

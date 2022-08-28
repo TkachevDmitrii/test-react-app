@@ -48,6 +48,7 @@ function PrevStepButton<Component extends React.ElementType = typeof Button>({
 
   const Component = component ?? Button
   return (
+    //@ts-ignore
     <Component {...derivedProps} disabled={disabled} onClick={previousStep}>
       <Content>
         <ArrowWrapper>

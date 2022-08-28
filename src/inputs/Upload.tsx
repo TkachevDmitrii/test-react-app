@@ -234,6 +234,7 @@ function Upload({
         {...derivedProps}
         {...inputProps}
         disabled={disabled}
+        //@ts-ignore
         error={uploadFailedMsg.length > 0}
         customItemRender={(file, index) => {
           return valueIsString ? (

@@ -23,11 +23,6 @@ export const ThirdScreen = () => {
     <>
       <img src='./result.png' />
       <p>{TASK_TEXT}</p>
-
-      <StyledStroke>
-        <Text>{data[0].name}</Text>
-        <Text>{data[0].value}</Text>
-      </StyledStroke>
     </>
   )
 }

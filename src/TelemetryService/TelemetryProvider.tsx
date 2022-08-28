@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState, useEffect } from 'react'
 import { withAITracking } from '@microsoft/applicationinsights-react-js'
 import { withRouter, useHistory, RouteComponentProps } from 'react-router-dom'
@@ -36,5 +37,6 @@ const Telemetry = ({ instrumentationKey, children }: Props) => {
   )
 }
 export const TelemetryProvider = withRouter(
+  //@ts-ignore
   withAITracking(ai.reactPlugin, Telemetry),
 )
