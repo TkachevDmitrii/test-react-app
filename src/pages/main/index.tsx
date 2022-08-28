@@ -7,6 +7,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   width: 50%;
   height: 500px;
+  border: 5px solid ${palette.GRAY}; 
 `
 const Text = styled.p`
   color: ${palette.RED};
