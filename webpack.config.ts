@@ -61,8 +61,8 @@ export const config: Configuration = {
         test: /\.(js|jsx|ts|tsx)$/,
         include: [
           path.resolve(__dirname, './src'),
-          path.resolve(__dirname, './node_modules/@project/ui-kit'),
-          path.resolve(__dirname, './node_modules/@project/http-client'),
+          path.resolve(__dirname, './node_modules/@my/ui-kit'),
+          path.resolve(__dirname, './node_modules/@my/http-client'),
         ],
         use: {
           loader: 'ts-loader',
@@ -132,7 +132,7 @@ export const config: Configuration = {
       chunks: 'async',
       cacheGroups: {
         vendors: {
-          test: /[\\/]node_modules[\\/](?!@project)/,
+          test: /[\\/]node_modules[\\/](?!@my)/,
           name: 'vendors',
           chunks: 'all',
         },

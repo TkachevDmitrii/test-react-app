@@ -2,7 +2,7 @@ import React from 'react'
 import { createStore, createApi } from 'effector'
 import { useStore } from 'effector-react'
 import styled from 'styled-components'
-import { Alert, Icon, palette } from '@project/ui-kit'
+import { Alert, Icon, palette } from '@my/ui-kit'
 import { originalHistory, PushParams } from './history'
 
 const $confirmDialog = createStore(false)

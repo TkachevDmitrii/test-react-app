@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import dotenv from 'dotenv'
+// eslint-disable-next-line import/no-named-as-default
 import webpack from 'webpack'
 import WebpackDevServer from 'webpack-dev-server'
 
@@ -27,7 +28,8 @@ async function bootstrap() {
     hot: true,
     proxy: {
       '/api': {
-        target: 'https://dev-adm.xn----7sbadrgm7cpsf0k.xn--p1ai/',
+        //change to actual later
+        // target: 'https://dev-adm.xn----7sbadrgm7cpsf0k.xn--p1ai/',
         pathRewrite: { '^/api': '' },
         changeOrigin: true,
       },

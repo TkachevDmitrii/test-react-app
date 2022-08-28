@@ -2,38 +2,92 @@
   "name": "test-app",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.13",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "effector": "^22.3.0",
-    "effector-react": "^22.1.6",
-    "eslint": "^8.0.1",
-    "history": "^5.3.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-query": "^3.39.2",
-    "react-refresh-typescript": "^2.0.7",
-    "react-scripts": "5.0.1",
-    "styled-components": "^5.3.5",
-    "typescript": "^4.4.2",
-    "web-vitals": "^2.1.0"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "ts-node-dev devserver.ts",
+    "build": "ts-node build.ts",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@hookform/resolvers": "^2.6.0",
+    "@microsoft/applicationinsights-react-js": "^3.0.5",
+    "@microsoft/applicationinsights-web": "^2.5.11",
+    "@microsoft/signalr": "^6.0.1",
+    "@my/ui-kit": "git+https://github.com/TkachevDmitrii/ui-kit#main",
+    "antd": "^4.21.2",
+    "axios": "^0.19.2",
+    "dayjs": "^1.10.7",
+    "debounce": "^1.2.1",
+    "decorators": "^0.0.1",
+    "effector": "^21.8.3",
+    "effector-react": "^21.2.1",
+    "effector-storage": "^4.2.1",
+    "final-form": "^4.20.6",
+    "final-form-arrays": "^3.0.2",
+    "google-map-react": "^2.1.10",
+    "nanoid": "^3.1.20",
+    "query-string": "^7.0.1",
+    "ramda": "^0.28.0",
+    "rc-picker": "^2.6.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-highlight-words": "^0.17.0",
+    "react-images-uploading": "^3.1.2",
+    "react-query": "^3.34.5",
+    "react-router-dom": "^5.2.0",
+    "react-spinners-kit": "^1.9.1",
+    "react-virtualized-auto-sizer": "^1.0.5",
+    "react-window": "^1.8.6",
+    "styled-components": "^5.3.3",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
+    "@types/antd": "^1.0.0",
+    "@types/copy-webpack-plugin": "^10.1.0",
+    "@types/debounce": "^1.2.0",
+    "@types/google-map-react": "^2.1.2",
+    "@types/html-webpack-plugin": "^3.2.6",
+    "@types/mini-css-extract-plugin": "^2.4.0",
+    "@types/ramda": "^0.27.11",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-highlight-words": "^0.16.2",
+    "@types/react-input-mask": "^3.0.1",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/react-virtualized-auto-sizer": "^1.0.0",
+    "@types/react-window": "^1.8.2",
+    "@types/styled-components": "^5.1.7",
+    "@types/webpack": "^5.28.0",
+    "@types/webpack-dev-server": "^4.3.1",
+    "@types/webpack-env": "^1.16.3",
+    "@types/yup": "^0.29.11",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.4.0",
+    "dotenv": "^10.0.0",
+    "eslint": "^8.7.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "html-webpack-plugin": "^5.3.2",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.5.4",
+    "mini-css-extract-plugin": "^2.4.2",
+    "react-refresh": "^0.10.0",
+    "react-refresh-typescript": "^2.0.2",
+    "sass": "^1.43.2",
+    "sass-loader": "^12.2.0",
+    "style-loader": "^3.3.0",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.3.0",
+    "ts-node-dev": "^1.1.8",
+    "type-fest": "^1.2.0",
+    "typescript": "^4.5.5",
+    "webpack": "^5.63.0",
+    "webpack-dev-server": "^4.4.0"
   },
   "browserslist": {
     "production": [
@@ -47,14 +101,15 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@types/styled-components": "^5.1.26",
-    "@typescript-eslint/eslint-plugin": "^5.33.1",
-    "@typescript-eslint/parser": "^5.33.1",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.30.1"
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "bash -c tsc --noEmit"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

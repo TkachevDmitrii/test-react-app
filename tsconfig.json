@@ -32,10 +32,10 @@
     "./**.**",
     "src",
     "src/types",
-    "node_modules/@project/ui-kit/src"
+    "node_modules/@my/ui-kit/src"
   ],
   "exclude": [
-    "node_modules/@project/ui-kit/src/**/*.stories.*"
+    "node_modules/@my/ui-kit/src/**/*.stories.*"
   ],
   "ts-node": {
     "transpileOnly": true,

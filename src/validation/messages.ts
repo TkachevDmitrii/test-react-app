@@ -1,0 +1,12 @@
+export const REQUIRED_MESSAGE = 'Данные не заполнены'
+export const INCORRECT_PASSWORD_MESSAGE = 'Пароль должен состоять не менее чем из 6 символов и содержать цифры и латинские буквы'
+export const REQUIRED_FIELD_MESSAGE = 'Поле является обязательным для заполнения'
+export const PASSWORD_NO_MATCH_MESSAGE = 'Пароль не совпадает'
+export const INVALID_PASSWORD = 'Неверный пароль'
+export const WRONG_EMAIL_MESSAGE = 'Неверный формат email. Пример правильного email: *****@my-llc.ru'
+export const WRONG_SYMBOLS_MESSAGE = 'Введены недопустимые символы'
+export const WRONG_LANGUAGE_MESSAGE = (fieldName: string) => `${fieldName} может быть только на русском языке`
+export const USER_EMAIL_ALLREADY_EXIST = 'Пользователь с таким email уже зарегистрирован'
+export const USER_EMAIL_DOES_NOT_EXIST = 'Пользователя с таким email не существует'
+export const USER_DISABLED = 'Пользователь заблокирован'
+export const ATTORNEY_DATE_REQUIRED = 'Введите дату действия доверенности'

@@ -1,4 +1,4 @@
-import { palette } from '@project/ui-kit'
+import { palette } from '@my/ui-kit'
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
