@@ -4,23 +4,29 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
 `
+const Container = styled.div`
+  width: 50%;
+  height: 500px;
+`
 const Text = styled.p`
   color: ${palette.RED};
+  font-weight: 600;
+  font-size: 24px;
 `
 
 export const Main = () => {
 
   return (
     <Wrapper>
-      <div>
+      <Container>
         <Text>qwe</Text>
         <Text>zxc</Text>
-      </div>
+      </Container>
       
-      <div>
+      <Container>
         <Text>asd</Text>
         <Text>eeee</Text>
-      </div>
+      </Container>
     </Wrapper>
   )
 }
