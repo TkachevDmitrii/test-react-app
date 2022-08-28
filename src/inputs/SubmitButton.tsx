@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { Button } from '@my/ui-kit'
 import { useForm, useFormState, useFieldContext, FormSubscription } from 'form'
 
@@ -47,7 +48,7 @@ function SubmitButton<Component extends React.ElementType = typeof Button>({
     (hasValidationErrors && (submitFailed || dirtySinceLastSubmit || Object.values(touched).every(t => t)))
     || (disablePristine && pristine)
 
-  const Component = component ?? Button
+  const Component = component as any ?? Button
   return (
     <Component {...derivedProps} disabled={disabled} onClick={form.submit}>
       {label}

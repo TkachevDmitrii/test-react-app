@@ -1,18 +1,10 @@
-import { Icon, palette } from '@my/ui-kit'
-import { Menu, MenuProps, Tooltip } from 'antd'
+import { Button, palette } from '@my/ui-kit'
+import { MenuProps, Menu } from 'antd'
 import { useLocation } from 'react-router-dom'
 import { 
-  AuditOutlined,
-  BankOutlined,
-  CopyOutlined,
-  MedicineBoxOutlined,
-  ReconciliationOutlined,
   UserAddOutlined,
-  UsergroupAddOutlined,
   UserOutlined,
-  WalletOutlined,
 } from '@ant-design/icons'
-import { useStore } from 'effector-react'
 import { _history } from 'App/history'
 
 interface IProps {
@@ -33,41 +25,41 @@ const { Item: MenuItem } = Menu
 
 type ClickHandler = NonNullable<MenuProps['onClick']>
 
-const StyledMenu = styled(Menu)`
-  padding: 24px 0px 0px 0px; 
-  display: flex; 
-  flex-direction: column; 
-  flex: 1; 
-  overflow-y: auto;
-  overflow-x: hidden;
-`
-const LabelMenu = styled.div`
-  font-size: 10px;
-  color: ${palette.GRAY_DARK};
-  margin: 16px 16px 10px;
-`
-const StyledMenuItem = styled(MenuItem)`
-  font-size: 14px;
-  color: ${palette.DARK};
-  font-weight: 500;
-  &&.ant-menu-item {
-    height: 30px;
-    line-height: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-  }
-  &&.ant-menu-item-selected {
-    background-color: ${palette.LIGHT_BLUE};
-  }
-  &&.ant-menu-item:hover {
-    color: ${palette.DARK};
-    opacity: 0.7;
-  }
-  && > .ant-menu-item-icon {
-    line-height: 0 !important; 
-  }
-`
+// const StyledMenu = styled(Menu)`
+//   padding: 24px 0px 0px 0px; 
+//   display: flex; 
+//   flex-direction: column; 
+//   flex: 1; 
+//   overflow-y: auto;
+//   overflow-x: hidden;
+// `
+// const LabelMenu = styled.div`
+//   font-size: 10px;
+//   color: ${palette.GRAY_DARK};
+//   margin: 16px 16px 10px;
+// `
+// const StyledMenuItem = styled(MenuItem)`
+//   font-size: 14px;
+//   color: ${palette.DARK};
+//   font-weight: 500;
+//   &&.ant-menu-item {
+//     height: 30px;
+//     line-height: 0;
+//     margin: 0;
+//     display: flex;
+//     align-items: center;
+//   }
+//   &&.ant-menu-item-selected {
+//     background-color: ${palette.LIGHT_BLUE};
+//   }
+//   &&.ant-menu-item:hover {
+//     color: ${palette.DARK};
+//     opacity: 0.7;
+//   }
+//   && > .ant-menu-item-icon {
+//     line-height: 0 !important; 
+//   }
+// `
 const StyledImage = styled.img`
   width: 100%;
   padding: 9px 15px;
@@ -170,15 +162,15 @@ function Navbar({ collapsed, onCollapse }: IProps) {
   return (
     <>
       <Logo collapsed={collapsed} />
-      <StyledMenu
+      <Menu
         theme='light'
         selectedKeys={selectedKeys}
         onClick={handleClick}
       >
-        {!collapsed && (<LabelMenu>1 этап</LabelMenu>)}
-        <StyledMenuItem icon={collapsed && <UserOutlined />} key='workers'>Простая верстка</StyledMenuItem>
-        <StyledMenuItem icon={collapsed && <UserAddOutlined />} key='verification'>------</StyledMenuItem>
-      </StyledMenu>
+        {/* {!collapsed && (<LabelMenu>1 этап</LabelMenu>)} */}
+        <MenuItem icon={collapsed && <UserOutlined />} key='workers'>Простая верстка</MenuItem>
+        <MenuItem icon={collapsed && <UserAddOutlined />} key='verification'>------</MenuItem>
+      </Menu>
     </>
   )
 }
