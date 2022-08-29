@@ -44,9 +44,6 @@ const screens = [
 ]
 
 const Lesson = ({ name, route }: ILessonProps) => (
-  // <LessonWrapper onClick={() =>  _history.push(`/LearnLayout/${route}`)}>
-  //   <LessonText>{name}</LessonText>
-  // </LessonWrapper>
   <LessonWrapper>
     <Button 
       onClick={() =>  _history.push(`/LearnLayout/${route}`)}

@@ -1,6 +1,11 @@
+import { _history } from 'App'
+import { BackButton } from 'components'
+
 export const FirstLesson = () => {
 
   return(
-    <>1</>
+    <>
+      <BackButton text='назад' onClick={() => _history.goBack()} />
+    </>
   )
 }
