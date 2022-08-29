@@ -6,6 +6,7 @@ declare global {
   type YupShema<Values extends Record<string, any>> = ObjectSchema<Values, any, any, any>;
 }
 
+//@ts-ignore
 function validateYupSchema<Values>(schema: YupShema<Values>, values: Record<string, any>) {
   try {
     schema.validateSync(values, { abortEarly: false })

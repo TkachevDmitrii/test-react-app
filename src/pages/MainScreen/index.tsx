@@ -28,7 +28,7 @@ const CheckboxContainer = styled.div`
   align-items: baseline;
 `
 
-export const Main = () => {
+export const MainScreen = () => {
 
   const history = useHistory()
 

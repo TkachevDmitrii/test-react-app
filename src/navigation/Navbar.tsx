@@ -1,7 +1,8 @@
-import { Button, palette } from '@my/ui-kit'
+import { Button, Icon, palette } from '@my/ui-kit'
 import { MenuProps, Menu } from 'antd'
 import { useLocation } from 'react-router-dom'
 import { 
+  HomeOutlined,
   UserAddOutlined,
   UserOutlined,
 } from '@ant-design/icons'
@@ -33,6 +34,16 @@ type ClickHandler = NonNullable<MenuProps['onClick']>
 //   overflow-y: auto;
 //   overflow-x: hidden;
 // `
+const IconContainer = styled.a`
+  display: flex;
+  margin-left: 8px;
+`
+const IconText = styled.p`
+  color: ${palette.DARK};
+  font-weight: 600;
+  font-size: 16px;
+  align-self: center;
+`
 const LabelMenu = styled.div`
   font-size: 10px;
   color: ${palette.GRAY_DARK};
@@ -122,9 +133,10 @@ const ItemWithCountCountainer = styled.div`
 `
 
 const Logo: React.FC<IProps> = ({ collapsed }) => (
-  <a href={'/workers'}>
-    {!collapsed ? (<StyledImage src='/images/logo.svg'/>) : (<StyledImage src='/images/logo_small.svg' height='58px' />)}
-  </a>
+  <IconContainer href={'/main'}>
+    <Icon type='home' color={palette.DARK} />
+    <IconText>Главная</IconText>
+  </IconContainer>
 )
 
 const Count: React.FC<ICountProps> = ({ value }) => (
@@ -168,7 +180,8 @@ function Navbar({ collapsed, onCollapse }: IProps) {
         onClick={handleClick}
       >
         {!collapsed && (<LabelMenu>1 этап</LabelMenu>)}
-        <MenuItem icon={collapsed && <UserOutlined />} key='main'>Простая верстка</MenuItem>
+        <MenuItem icon={collapsed && <UserOutlined />} key='LearnLayout'>Верстка</MenuItem>
+        {/* <MenuItem icon={collapsed && <UserOutlined />} key='main'>Простая верстка</MenuItem> */}
         <MenuItem icon={collapsed && <UserAddOutlined />} key='second'>Следующий экран</MenuItem>
         <MenuItem icon={collapsed && <UserAddOutlined />} key='third'>Третий экран</MenuItem>
       </Menu>
