@@ -49,7 +49,7 @@ function MainLayout({ children }: { children: ReactNode }) {
       <Layout style={{ marginLeft: collapsed ? 79 : 240 }}>
         <Header
           style={{
-            backgroundColor: '#3571EA', position: 'fixed',
+            backgroundColor: palette.BLUE_SHADOW, position: 'fixed',
             zIndex: 1, width: `calc(100% - ${sidebarWidth})`, display: 'inline-flex', justifyContent: 'space-between',
             alignItems: 'center', paddingLeft: '32px', paddingRight: '32px'
           }}

@@ -1,16 +1,16 @@
 import { Route, Switch, useRouteMatch } from 'react-router-dom'
-import { Main } from 'pages/main'
+import { MainScreen } from 'pages/MainScreen'
 // import WorkerProfilePage from 'pages/worker/WorkerProfilePage'
 
-function Workers() {
+function Main() {
   const { path } = useRouteMatch()
   
   return (
     <Switch>
-      <Route exact path={path} component={Main} />
+      <Route exact path={path} component={MainScreen} />
       {/* <Route path={`${path}/:id`} component={WorkerProfilePage} /> */}
     </Switch>
   )
 }
 
-export default Workers
+export default Main

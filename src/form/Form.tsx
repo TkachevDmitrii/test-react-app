@@ -65,6 +65,7 @@ const mutators = {
 export function Form<
   Values = Record<string, any>,
   InitialValues extends Partial<Values> = Partial<Values>
+//@ts-ignore
 >(props: FormProps<Values, InitialValues>) {
   const {
     children,
@@ -81,6 +82,7 @@ export function Form<
     notifyOnUnsavedChanges = false
   } = props
 
+  //@ts-ignore
   const current = useMutableState<FormMutableState<Values, InitialValues>>()
 
   current.notifyOnUnsavedChanges = notifyOnUnsavedChanges
@@ -144,6 +146,7 @@ export function Form<
     }
 
     if (current.validate !== validate) {
+      //@ts-ignore
       const validator = createFormValidator<Values>(validate)
       form.setConfig('validate', validator)
       current.validate = validate
