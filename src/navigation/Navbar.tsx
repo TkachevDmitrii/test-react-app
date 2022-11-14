@@ -7,7 +7,15 @@ import {
   UserOutlined,
 } from '@ant-design/icons'
 import { _history } from 'App/history'
+import { MenuItem } from './components'
 
+export interface IMenuItem {
+  path: string
+  iconType: IconType
+  name: string
+  permission: Permissions
+  switch?: boolean
+}
 interface IProps {
   collapsed: boolean
   onCollapse?: () => void
@@ -22,7 +30,7 @@ interface INameWithCountProps {
   count: number
 }
 
-const { Item: MenuItem } = Menu
+// const { Item: MenuItem } = Menu
 
 type ClickHandler = NonNullable<MenuProps['onClick']>
 
@@ -49,67 +57,8 @@ const LabelMenu = styled.div`
   color: ${palette.GRAY_DARK};
   margin: 16px 16px 10px;
 `
-// const StyledMenuItem = styled(MenuItem)`
-//   font-size: 14px;
-//   color: ${palette.DARK};
-//   font-weight: 500;
-//   &&.ant-menu-item {
-//     height: 30px;
-//     line-height: 0;
-//     margin: 0;
-//     display: flex;
-//     align-items: center;
-//   }
-//   &&.ant-menu-item-selected {
-//     background-color: ${palette.LIGHT_BLUE};
-//   }
-//   &&.ant-menu-item:hover {
-//     color: ${palette.DARK};
-//     opacity: 0.7;
-//   }
-//   && > .ant-menu-item-icon {
-//     line-height: 0 !important; 
-//   }
-// `
-const StyledImage = styled.img`
-  width: 100%;
-  padding: 9px 15px;
-`
-const BottomMenu = styled.div`
-  margin-top: auto;
-  padding-bottom: 12px;
-  justify-content: space-between;
-  align-items: baseline;
-`
-const ProfileLogoutWrapper = styled.div`
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  padding: 26px 20px;
-`
-const CollapseMenuWrapper = styled.div<{ collapsed: boolean }>`
-  ${({ collapsed }) => collapsed
-    ? 'text-align: -webkit-center;'
-    : 'float: right;'}
-  margin-right: ${({ collapsed }) => !collapsed && '21px'};
-`
-const IconWrapper = styled.div<{ collapsed?: boolean }>`
-  cursor: pointer;
-  width: 16px;
-  ${({ collapsed }) => collapsed && 'transform: rotate(180deg);'}
-`
-const ProfileNameText = styled.p`
-  cursor: pointer;
-  align-self: center;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  color: ${palette.GRAY_DARK};
+const StyledMenuItem = styled.div`
+  
 `
 const CountContainer = styled.div<{ visible: boolean }>`
   ${({ visible }) => !visible && 'display: none'};
@@ -167,7 +116,7 @@ function Navbar({ collapsed, onCollapse }: IProps) {
   }, [pathname])
 
   const handleClick = useCallback<ClickHandler>(
-    ({ key }) => _history.push('/' + key),
+    ({ key }) => _history.push(key),
     []
   )
   
@@ -179,11 +128,19 @@ function Navbar({ collapsed, onCollapse }: IProps) {
         selectedKeys={selectedKeys}
         onClick={handleClick}
       >
-        {!collapsed && (<LabelMenu>1 этап</LabelMenu>)}
-        <MenuItem icon={collapsed && <UserOutlined />} key='LearnLayout'>Верстка</MenuItem>
+        {/* {!collapsed && (<LabelMenu>1 этап</LabelMenu>)} */}
+        {/* <MenuItem icon={collapsed && <UserOutlined />} key='LearnLayout'>Верстка</MenuItem> */}
         {/* <MenuItem icon={collapsed && <UserOutlined />} key='main'>Простая верстка</MenuItem> */}
-        <MenuItem icon={collapsed && <UserAddOutlined />} key='second'>Следующий экран</MenuItem>
-        <MenuItem icon={collapsed && <UserAddOutlined />} key='third'>Третий экран</MenuItem>
+        {/* <MenuItem icon={collapsed && <UserAddOutlined />} key='second'>Следующий экран</MenuItem> */}
+        {/* <MenuItem icon={collapsed && <UserAddOutlined />} key='third'>Третий экран</MenuItem> */}
+        <MenuItem
+          active={true}
+          expanded={true}
+          iconType='staff'
+          name='LearnLayout'
+          path='LearnLayout'
+          onCloseMenu={() => null}
+        />
       </Menu>
     </>
   )

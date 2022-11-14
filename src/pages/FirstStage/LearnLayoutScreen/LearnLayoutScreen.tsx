@@ -30,7 +30,7 @@ const HintLabel = styled(Label)`
 `
 const LessonsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 `
 const LessonWrapper = styled.div`
   margin: 10px;

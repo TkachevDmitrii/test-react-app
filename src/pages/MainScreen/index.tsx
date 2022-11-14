@@ -35,16 +35,17 @@ export const MainScreen = () => {
   return (
     <Wrapper>
       <Container>
-        <Text>qwe</Text>
-        <Text>zxc</Text>
+        <Text>styled component 1</Text>
+        <Text>styled component 2</Text>
         <Button type='transparent' onClick={() => history.push('second')}>
           Кнопка ведет на Следующий экран
         </Button>
       </Container>
       
       <Container>
-        <Text>asd</Text>
-        <Text>eeee</Text>
+        <Text>styled component 3</Text>
+        <Text>styled component 4</Text>
+        <p className='Text'>стиль через css</p>
         <CheckboxContainer>
           <Checkbox 
             onChange={({ target }) => console.log('value', target.checked)}
