@@ -3,10 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom'
 import SignIn from 'pages/SignIn'
 import { MainLayout } from 'layouts'
 
-const Main = lazy(() => import('./main'))
-const SecondScreen = lazy(() => import('./second'))
-const ThirdScreen = lazy(() => import('./third'))
-const LearnLAyout = lazy(() => import('./learnLayout'))
+const Home = lazy(() => import('./home'))
 
 const getAuthorized = () =>
   Boolean(localStorage.getItem('accessToken')) 
@@ -35,10 +32,7 @@ function Routing() {
       <Suspense fallback={<></>}>
         <Switch>
           <Redirect exact path='/' to='/main' />
-          <Route path='/main' component={Main} />
-          <Route path='/second' component={SecondScreen} />
-          <Route path='/third' component={ThirdScreen} />
-          <Route path='/LearnLAyout' component={LearnLAyout}/>
+          <Route path='/main' component={Home} />
         </Switch>
       </Suspense>
     </MainLayout>

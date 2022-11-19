@@ -34,14 +34,6 @@ interface INameWithCountProps {
 
 type ClickHandler = NonNullable<MenuProps['onClick']>
 
-// const StyledMenu = styled(Menu)`
-//   padding: 24px 0px 0px 0px; 
-//   display: flex; 
-//   flex-direction: column; 
-//   flex: 1; 
-//   overflow-y: auto;
-//   overflow-x: hidden;
-// `
 const IconContainer = styled.a`
   display: flex;
   margin-left: 8px;
@@ -128,11 +120,6 @@ function Navbar({ collapsed, onCollapse }: IProps) {
         selectedKeys={selectedKeys}
         onClick={handleClick}
       >
-        {/* {!collapsed && (<LabelMenu>1 этап</LabelMenu>)} */}
-        {/* <MenuItem icon={collapsed && <UserOutlined />} key='LearnLayout'>Верстка</MenuItem> */}
-        {/* <MenuItem icon={collapsed && <UserOutlined />} key='main'>Простая верстка</MenuItem> */}
-        {/* <MenuItem icon={collapsed && <UserAddOutlined />} key='second'>Следующий экран</MenuItem> */}
-        {/* <MenuItem icon={collapsed && <UserAddOutlined />} key='third'>Третий экран</MenuItem> */}
         <MenuItem
           active={true}
           expanded={true}
